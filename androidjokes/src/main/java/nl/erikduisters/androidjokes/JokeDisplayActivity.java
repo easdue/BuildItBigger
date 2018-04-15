@@ -28,7 +28,11 @@ public class JokeDisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        joke.setText(intent.getStringExtra(KEY_JOKE));
+        if (intent.hasExtra(KEY_JOKE)) {
+            joke.setText(intent.getStringExtra(KEY_JOKE));
+        } else {
+            joke.setText(getString(R.string.no_joke_passed, KEY_JOKE));
+        }
     }
 
     @Override

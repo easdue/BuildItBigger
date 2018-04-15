@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">androidJokes</string>
+    <string name="no_joke_passed">You have to provide a joke as a StringExtra with key: %s</string>
 </resources>

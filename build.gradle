@@ -23,11 +23,11 @@ allprojects {
 
 task runTestsOnLocalServer {
     dependsOn ':backend:appengineStart'
-    dependsOn ':app:connectedFreeDebugAndroidTest'
+    dependsOn ':app:connectedAndroidTest'
     dependsOn ':backend:appengineStop'
 
-    tasks.findByPath(':app:connectedFreeDebugAndroidTest').mustRunAfter(':backend:appengineStart')
-    tasks.findByPath(':app:connectedFreeDebugAndroidTest').finalizedBy(':backend:appengineStop')
-    tasks.findByPath(':backend:appengineStop').mustRunAfter(':app:connectedFreeDebugAndroidTest')
+    tasks.findByPath(':app:connectedAndroidTest').mustRunAfter(':backend:appengineStart')
+    tasks.findByPath(':app:connectedAndroidTest').finalizedBy(':backend:appengineStop')
+    tasks.findByPath(':backend:appengineStop').mustRunAfter(':app:connectedAndroidTest')
 }
 
